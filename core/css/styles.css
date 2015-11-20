@@ -27,7 +27,7 @@ select:hover {
 
 body {
 	background-color: #ffffff;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: .8em;
 	line-height: 1.6em;
 	font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif;
@@ -257,6 +257,9 @@ button, .button,
 	color: #555;
 	border: 1px solid rgba(240,240,240,.9);
 	cursor: pointer;
+}
+select, .button.multiselect {
+	font-weight: 400;
 }
 input[type="submit"]:hover, input[type="submit"]:focus,
 input[type="button"]:hover, input[type="button"]:focus,
@@ -575,35 +578,12 @@ input[type="submit"].enabled {
 	color: #ccc;
 }
 
-/* Icons for username and password fields to better recognize them */
-#adminlogin,
-#adminpass,
-input[name='adminpass-clone'],
-#user,
-#password,
-input[name='password-clone'] {
-	width: 223px !important;
-	padding-left: 36px !important;
-}
-#adminlogin+label+img,
-#adminpass-icon,
-#user+label+img,
-#password-icon {
-	position: absolute;
-	left: 16px;
-	top: 22px;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	opacity: .3;
-}
-#adminpass-icon, #password-icon {
-	top: 17px;
-}
-
 /* General new input field look */
 #body-login input[type="text"],
 #body-login input[type="password"],
 #body-login input[type="email"] {
 	border: none;
+	font-weight: 300;
 }
 
 /* Nicely grouping input field sets */
@@ -787,6 +767,9 @@ html.ie8 #body-login form input[type="checkbox"] {
 .error a {
 	color: #fff !important;
 	font-weight: 600 !important;
+}
+.error a.button {
+	color: #555 !important;
 }
 .error pre {
 	white-space: pre-wrap;
