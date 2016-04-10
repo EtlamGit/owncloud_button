@@ -55,11 +55,15 @@ script('core', [
 			<label for="password" class="infield"><?php p($l->t('Password')); ?></label>
 		</p>
 
-		<?php if (isset($_['invalidpassword']) && ($_['invalidpassword'])): ?>
+		<?php if (!empty($_['invalidpassword']) && !empty($_['canResetPassword'])) { ?>
 		<a id="lost-password" class="warning" href="">
 			<?php p($l->t('Wrong password. Reset it?')); ?>
 		</a>
-		<?php endif; ?>
+		<?php } else if (!empty($_['invalidpassword'])) { ?>
+			<p class="warning">
+				<?php p($l->t('Wrong password.')); ?>
+			</p>
+		<?php } ?>
 		<div class="remember-login-container">
 			<?php if ($_['rememberLoginAllowed'] === true) : ?>
 				<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white">
