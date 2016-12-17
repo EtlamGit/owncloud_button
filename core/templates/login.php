@@ -65,7 +65,8 @@ script('core', [
 			</p>
 		<?php } ?>
 		<div class="remember-login-container">
-			<input type="submit" id="submit" class="login primary icon-confirm svg" title="<?php p($l->t('Log in')); ?>" value="" disabled="disabled"/>
+			<input type="submit" id="submit" class="login primary" value="<?php p($l->t('Log in')); ?>" disabled="disabled"/>
+			<br>
 			<?php if ($_['rememberLoginAllowed'] === true) : ?>
 				<?php if ($_['rememberLoginState'] === 0) { ?>
 					<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white">
