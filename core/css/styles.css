@@ -351,6 +351,10 @@ a.two-factor-cancel {
 	font-weight: 300;
 }
 
+#alternative-logins ul {
+	text-align: center;
+}
+
 /* Nicely grouping input field sets */
 .grouptop,
 .groupmiddle,
@@ -715,8 +719,6 @@ code { font-family:"Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono
 
 #quota {
 	cursor: default;
-	margin: 30px !important;
-	position: relative;
 	padding: 0 !important;
 }
 #quota div {
