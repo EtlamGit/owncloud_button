@@ -65,6 +65,11 @@ script('core', [
 				<?php p($l->t('Wrong password.')); ?>
 			</p>
 		<?php } ?>
+		<?php if (!empty($_['accessLink'])) { ?>
+			<p class="warning">
+				<?php p($l->t("You are trying to access a private link. Please log in first.")) ?>
+			</p>
+		<?php } ?>
 		<div class="remember-login-container">
 			<input type="submit" id="submit" class="login primary" value="<?php p($l->t('Log in')); ?>" disabled="disabled"/>
 			<br>
