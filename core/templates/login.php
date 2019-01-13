@@ -56,6 +56,16 @@ script('core', [
 			<label for="password" class="infield"><?php p($l->t('Password')); ?></label>
 		</p>
 
+		<div id="submit-wrapper">
+			<input type="submit" id="submit" class="login primary" title="" value="<?php p($l->t('Log in')); ?>" disabled="disabled" />
+			<div class="submit-icon icon-confirm-white"></div>
+		</div>
+
+		<?php if (!empty($_['csrf_error'])) { ?>
+		<p class="warning">
+			<?php p($l->t('You took too long to login, please try again now')); ?>
+		</p>
+		<?php } ?>
 		<?php if (!empty($_['invalidpassword']) && !empty($_['canResetPassword'])) { ?>
 		<a id="lost-password" class="warning" href="<?php p($_['resetPasswordLink']); ?>">
 			<?php p($l->t('Wrong password. Reset it?')); ?>
@@ -70,18 +80,16 @@ script('core', [
 				<?php p($l->t("You are trying to access a private link. Please log in first.")) ?>
 			</p>
 		<?php } ?>
+		<?php if ($_['rememberLoginAllowed'] === true) : ?>
 		<div class="remember-login-container">
-			<input type="submit" id="submit" class="login primary" value="<?php p($l->t('Log in')); ?>" disabled="disabled"/>
-			<br>
-			<?php if ($_['rememberLoginAllowed'] === true) : ?>
-				<?php if ($_['rememberLoginState'] === 0) { ?>
-					<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white">
-				<?php } else { ?>
-					<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white" checked="checked">
-				<?php } ?>
-				<label for="remember_login"><?php p($l->t('Stay logged in')); ?></label>
-			<?php endif; ?>
+			<?php if ($_['rememberLoginState'] === 0) { ?>
+			<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white">
+			<?php } else { ?>
+			<input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white" checked="checked">
+			<?php } ?>
+			<label for="remember_login"><?php p($l->t('Stay logged in')); ?></label>
 		</div>
+		<?php endif; ?>
 		<input type="hidden" name="timezone-offset" id="timezone-offset"/>
 		<input type="hidden" name="timezone" id="timezone"/>
 		<input type="hidden" name="requesttoken" value="<?php p($_['requesttoken']) ?>">
