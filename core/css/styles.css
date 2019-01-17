@@ -293,7 +293,7 @@ a.two-factor-cancel {
 }
 #body-login form fieldset {
 	margin-bottom: 20px;
-	text-align: left;
+	text-align: right;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
